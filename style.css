@@ -16,6 +16,17 @@
 
 .sidebar {
     background-color: lightskyblue;
+    grid-row: 1 /3;
+    display: grid;
+    grid-template-rows: minmax(80px, 100px) repeat(10, minmax(40px, 40px));
+}
+
+.sidebar-body {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .main-content {
