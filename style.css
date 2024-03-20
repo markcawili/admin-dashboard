@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 4fr;
+}
+
+.header {
+    background-color: lightgray;
+    grid-column: 2 / 3;
+}
+
+.sidebar {
+    background-color: lightskyblue;
+}
+
+.main-content {
+    background-color: lightcoral;
+}
