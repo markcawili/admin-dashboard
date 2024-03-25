@@ -1,4 +1,75 @@
+/* Setting global values */
+:root {
+    font-size: 16px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    --text-primary: black;
+    --text-secondary: white;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 1s;
+    --drawer-color: #0ea5e9;
 
+    /*Min value, Max value, Ideal value!*/
+    --drawer-width: clamp(210px, 22vw, 325px);
 
+    --nav-bg-1: #f8f8f8;
+    --nav-color-1: #c9c9c9;
+    --nav-color-2: #62daff6e;
+    --blue-1: #084c61;
+    --gh-avatar: url('https://github.com/markcawili.png');
+    --gh-avatar2: url('https://github.com/bob.png');
+    --gh-avatar3: url('https://github.com/alice.png');
+    --gh-avatar4: url('https://github.com/amy.png');
+    --content-gray: rgb(235, 235, 235);
 
+    --transition-notDrawer: margin-left 0.4s ease-in;
+    --transition-drawer: width 0.4s ease-in;
+}
+
+/* This ensures that the body is always 100% of our screen */
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+    /* imagining what the layout is like */
+    "drawer nav nav nav"
+    "drawer content content content";
+
+    /* Row will take up less than 1, the rest of the section takes up more */
+    grid-template-rows: 0.8fr 4fr;
+    grid-template-columns: 5rem 1fr 1fr 1fr;
+}
+
+.drawer {
+    grid-area: drawer;
+    background-color: var(--drawer-color);
+    /* Width based on font size */
+    width: 5rem;
+    /* This means it will stay on the screen */
+    position: fixed;
+    transition: var(--transition-drawer);
+    overflow: hidden;
+}
+
+.menuItem {
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Selects everything in menuItem */
+.menuItem:hover > * {
+    cursor: pointer;
+}
+
+.nav-item {
+    grid-area: nav;
+}
+
+.content {
+    grid-area: content;
+}
 
